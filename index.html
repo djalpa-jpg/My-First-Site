@@ -5,24 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jalpa Nagisetty | Personal Homepage</title>
 </head>
-<body style="margin: 0; padding: 48px 20px; background: #f5f7fa; color: #263238; font-family: Arial, sans-serif; line-height: 1.6;">
-  <main style="max-width: 640px; margin: 0 auto; padding: 36px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 18px rgba(38, 50, 56, 0.08);">
-    <h1 style="margin: 0 0 8px; color: #1565c0; font-size: 2.2rem;">Jalpa Nagisetty</h1>
-    <p style="margin: 0 0 28px; color: #607d8b;">Data Product Manager in the Bay Area, learning to build with AI.</p>
-
+<body style="--page-bg: #fff8cc; --page-pattern: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cg fill='%23fff' stroke='%23f0e5a5' stroke-width='1'%3E%3Cellipse cx='0' cy='-12' rx='6' ry='10'/%3E%3Cellipse cx='0' cy='-12' rx='6' ry='10' transform='rotate(60)'/%3E%3Cellipse cx='0' cy='-12' rx='6' ry='10' transform='rotate(120)'/%3E%3Cellipse cx='0' cy='-12' rx='6' ry='10' transform='rotate(180)'/%3E%3Cellipse cx='0' cy='-12' rx='6' ry='10' transform='rotate(240)'/%3E%3Cellipse cx='0' cy='-12' rx='6' ry='10' transform='rotate(300)'/%3E%3C/g%3E%3Ccircle r='5' fill='%23f5c842'/%3E%3Cg transform='translate(45 45)'%3E%3Cg fill='%23fff' stroke='%23f0e5a5' stroke-width='1'%3E%3Cellipse cy='-12' rx='6' ry='10'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(60)'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(120)'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(180)'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(240)'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(300)'/%3E%3C/g%3E%3Ccircle r='5' fill='%23f5c842'/%3E%3C/g%3E%3Cg transform='translate(135 135)'%3E%3Cg fill='%23fff' stroke='%23f0e5a5' stroke-width='1'%3E%3Cellipse cy='-12' rx='6' ry='10'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(60)'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(120)'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(180)'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(240)'/%3E%3Cellipse cy='-12' rx='6' ry='10' transform='rotate(300)'/%3E%3C/g%3E%3Ccircle r='5' fill='%23f5c842'/%3E%3C/g%3E%3C/svg%3E&quot;); --card-bg: #ffffff; --text-color: #263238; --muted-color: #607d8b; --accent-color: #1565c0; --card-shadow: 0 4px 18px rgba(38, 50, 56, 0.08); margin: 0; padding: 48px 20px; background-color: var(--page-bg); background-image: var(--page-pattern); background-size: 180px 180px; color: var(--text-color); font-family: Arial, sans-serif; line-height: 1.6; transition: background-color 0.2s, color 0.2s;">
+  <main style="max-width: 640px; margin: 0 auto; padding: 36px; background: var(--card-bg); border-radius: 12px; box-shadow: var(--card-shadow); transition: background 0.2s, box-shadow 0.2s;">
+    <button id="theme-toggle" type="button" aria-pressed="false" style="display: block; margin: 0 0 24px auto; padding: 10px 14px; border: 0; border-radius: 8px; background: #1565c0; color: #ffffff; font-size: 0.95rem; cursor: pointer;">Switch to dark mode</button>
+    <h1 style="margin: 0 0 8px; color: var(--accent-color); font-size: 2.2rem;">Jalpa Nagisetty</h1>
     <section aria-labelledby="about-heading" style="margin-bottom: 28px;">
       <h2 id="about-heading" style="margin: 0 0 8px; font-size: 1.25rem;">About me</h2>
-      <p style="margin: 0;">I’m a Data Product Manager in the Bay Area, learning to build with AI. I’m excited to create useful tools for my family and help my sister with automation.</p>
+      <p style="margin: 0;">My name is Jalpa Nagisetty. I live in the Bay Area and work as a Data Product Manager for an insurance company on the East Coast. My goal is to build a foundation in AI, keep learning, and one day call myself an AI Product Manager.</p>
     </section>
 
     <section aria-labelledby="goals-heading">
       <h2 id="goals-heading" style="margin: 0 0 8px; font-size: 1.25rem;">What I’m building</h2>
       <ul style="margin: 0; padding-left: 22px;">
-        <li>A weekly menu-planning app for my family</li>
-        <li>An app that syncs and displays all our calendars live on a monitor, replacing the manual calendar in our kitchen</li>
-        <li>Automation tools to help my sister</li>
+        <li>Build a meal-planning app for my family.</li>
+        <li>Create a calendar app that shows everyone’s activity on a live monitor, replacing our monthly paper calendar.</li>
+        <li>Build automation features that help small businesses.</li>
       </ul>
     </section>
   </main>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const page = document.body;
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = themeToggle.getAttribute('aria-pressed') !== 'true';
+      page.style.setProperty('--page-bg', isDark ? '#121820' : '#fff8cc');
+      page.style.backgroundBlendMode = isDark ? 'soft-light' : 'normal';
+      page.style.setProperty('--card-bg', isDark ? '#1e2935' : '#ffffff');
+      page.style.setProperty('--text-color', isDark ? '#e7edf3' : '#263238');
+      page.style.setProperty('--muted-color', isDark ? '#b0bec5' : '#607d8b');
+      page.style.setProperty('--accent-color', isDark ? '#90caf9' : '#1565c0');
+      page.style.setProperty('--card-shadow', isDark ? '0 4px 18px rgba(0, 0, 0, 0.3)' : '0 4px 18px rgba(38, 50, 56, 0.08)');
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.textContent = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    });
+  </script>
 </body>
 </html>
